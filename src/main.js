@@ -15,4 +15,17 @@ $(document).ready(() => {
     .on("mouseleave", (event) => {
       $(event.currentTarget).removeClass("btn-hover");
     });
+
+  // Adding user post to 50 Characters
+  $(".postText").on("keyup", (event) => {
+    let post = $(event.currentTarget).val();
+    let remaining = 50 - post.length;
+    $(".characters").text(remaining);
+    if (remaining <= 0) {
+      $(".wordcount").addClass("red");
+      $(".postText").blur();
+    } else {
+      $(".wordcount").removeClass("red");
+    }
+  });
 });
