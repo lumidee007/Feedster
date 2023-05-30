@@ -16,10 +16,10 @@ $(document).ready(() => {
       $(event.currentTarget).removeClass("btn-hover");
     });
 
-  // Adding user post to 50 Characters
+  // Adding user post functionality to 140 Characters
   $(".postText").on("keyup", (event) => {
     let post = $(event.currentTarget).val();
-    let remaining = 50 - post.length;
+    let remaining = 140 - post.length;
     $(".characters").text(remaining);
     if (remaining <= 0) {
       $(".wordcount").addClass("red");
